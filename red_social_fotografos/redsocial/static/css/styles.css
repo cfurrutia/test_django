@@ -1,0 +1,120 @@
+/* Estilos generales */
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif; /* Fuente para todo el cuerpo */
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    padding: 1rem;
+    background-color: #f8f9fa; /* Gris claro */
+    border-bottom: 1px solid #ddd; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
+
+.navbar-nav {
+    margin-left: auto; 
+}
+
+.nav-link {
+    margin-right: 15px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Efecto de transiciones */
+}
+
+.nav-link:hover {
+    color: #0056b3;
+    background-color: rgba(0, 86, 179, 0.1); 
+}
+
+/* Estilos de botones */
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff; /* Texto */
+}
+
+.btn-outline-primary {
+    color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff; /* Color del texto */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Estilos para tarjetas */
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Estilos para pantallas responsivas */
+@media (max-width: 767px) {
+    .header {
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
+
+/* Estilos adicionales */
+h1, h2, h3 {
+    color: #333; /* Color de los encabezados */
+}
+
+p {
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+}

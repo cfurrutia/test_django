@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8">
+            <img src="{{ imagen.url }}" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-4">
+            <h2>{{ imagen.descripcion }}</h2>
+            <p><strong>Fecha de publicación:</strong> {{ imagen.fecha }}</p>
+            <p><strong>Categoría:</strong> {{ imagen.categoria.nombre }}</p>
+            <h3>Comentarios</h3>
+            <ul class="list-group">
+                {% for comentario in comentarios %}
+                <li class="list-group-item">
+                    <p>{{ comentario.comentario }}</p>
+                    <small class="text-muted">{{ comentario.fecha }} por {{ comentario.user.username }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+            {% if user.is_authenticated %}
+            <form method="post" class="mt-4">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="comentario" class="form-label">Agregar Comentario</label>
+                    <textarea class="form-control" id="comentario" name="comentario" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Comentar</button>
+            </form>
+            {% else %}
+            <p>Para agregar un comentario, <a href="{% url 'login' %}">inicia sesión</a>.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

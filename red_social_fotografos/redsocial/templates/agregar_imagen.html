@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<h2>Agregar Imagen</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Subir Imagen</button>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="container text-center mt-5">
+    <h1>Bienvenido a Red Social Fotográfica</h1>
+    <p>Comparte tus fotos y participa en concursos fotográficos.</p>
+    <div class="mt-4">
+        {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'imagenes' %}">
+            <i class="fas fa-camera"></i> Ver Imágenes
+        </a>
+        {% else %}
+        <a class="btn btn-primary" href="{% url 'login' %}">
+            Iniciar Sesión
+        </a>
+        <a class="btn btn-secondary" href="{% url 'registro' %}">
+            Registrarse
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

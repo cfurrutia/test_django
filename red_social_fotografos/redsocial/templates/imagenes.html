@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<h2 class="mb-4">Imágenes</h2>
+<div class="row row-cols-1 row-cols-md-3">
+    {% for imagen in imagenes %}
+    <div class="col mb-4">
+        <div class="card shadow-sm">
+            <img src="{{ imagen.url }}" class="card-img-top" alt="{{ imagen.descripcion }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ imagen.descripcion }}</h5>
+                <p class="card-text">Publicado el {{ imagen.fecha }}</p>
+                <a href="{% url 'detalle_imagen' imagen.id %}" class="btn btn-primary">Ver Detalles</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <p>No hay imágenes disponibles.</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
